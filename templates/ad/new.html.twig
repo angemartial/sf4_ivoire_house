@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+Crée une nouvelle  annonce !
+{% endblock %}
+
+{% form_theme form 'ad/_collection.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="my-5">Crée une nouvelle annonce</h1>
+
+        {{ form_start(form) }}
+
+            <div class="row">
+
+                <div class="col">
+                    <div class="alert alert-light">
+                        <h2>Informations générales</h2>
+                        <hr>
+                        {{ form_row(form.title) }}
+                        {{ form_row(form.slug) }}
+                        {{ form_row(form.price) }}
+                        {{ form_row(form.rooms) }}
+                    </div>
+                    <div class="alert alert-light">
+                        <h2>Dérail de l'annonce</h2>
+                        <hr>
+                        {{ form_row(form.introduction) }}
+                        {{ form_row(form.content) }}
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="alert alert-light">
+                            <h2>Images de l'annonce</h2>
+                            <hr>
+                            {{ form_row(form.coverImage) }}
+                            {{ form_row(form.images) }}
+                    </div>
+                </div>
+            </div>
+            
+       
+            <div class="alert alert-success clearfix">
+                <h2 class="alert-heading">Sauvegarder l'annonce</h2>
+                <p>Vous êtes sur le point de sauvegarder votre annonce ! </p>                
+                 <button type="submit" class="btn btn-primary float-right">
+                 <i class="fas fa-check"></i>Créer une nouvelle annonce</button>
+            </div>
+        
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}
+
+{% block _annonce_images_widget %}
+
+    <p>Ajoutez vos images ici !</p>
+
+    {{ form_widget(form) }}
+
+    <input type="hidden" id="widgets-counter" value="0">
+
+    <div class="form-group">
+        <button type="button" id="add-image" class="btn btn-primary">Ajouter une image</button>
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+<script src='/js/ad.js'></script>
+        
+{% endblock %}
+
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connexion au dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">        
+    <link rel="stylesheet" href="/css/app.css">
+
+    <style> 
+        body{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card{
+            margin-top: 10%;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="col-md-4">
+        <div class="card bg-light">
+             <div class="card-header">
+                    <h4 class="card-title">
+                        <i class="fas fa-lock"></i>
+                        Connexion à l'administration
+                    </h4>
+            </div>
+            <div class="card-body">
+
+            {% if hasError  %}
+                <div class="alert alert-warning"><p>Le nom utilisateur ou le mot de passe est invalide</p></div>
+            {% endif %}
+            
+                <form method="post">
+                        <div class="form-group"><label for="_username">Email</label>
+                            <input type="text" class="form-control" placeholder="Adresse email" name="_username" 
+                            value="{{ username }}">
+                        </div>
+                        <div class="form-group"><label for="_password">Mot de passe</label>
+                            <input type="password" class="form-control" placeholder="Mot de passe" name="_password"
+                            required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-lock"></i>
+                                 connexion !
+                            </button>
+                            <a href="{{ path('homepage') }}" class="btn btn-link">
+                                <i class="fas fa-arrow-circle-left"></i>
+                                Retour au site
+                            </a>
+                        </div>
+                </form>
+            </div> 
+        </div>
+    
+    </div>
+        
+
+
+
+
+
+  <script src="https://kit.fontawesome.com/b77a14bce1.js"></script>  
+</body>
+</html>

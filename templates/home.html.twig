@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+        <div class="jumbotron mt-3">
+            <h1 class="display-3">Bienvenue sur IvoireHouse</h1>
+            <p class="lead">Nous mettons en relation les voyageurs et les propriétaires 
+            qui veulent profiter d'opportinuités et gagner de l'argent en proposant leurs biens à la location </p>
+            <hr class="my-4">
+            <p>Vous êtes voyageurs? Et vous voulez voir où vous pourrez loger lors de votre prochain voyage?.</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">En savoir plus</a>
+            </p>
+        </div>
+
+        <h2 class="h1 my-5 ">Nos appartements favoris</h2>
+ 
+        <div class="row">
+          {% for data in ads %}
+             {% include 'ad/_ad.html.twig' with {'ad':data.annonce} %}
+          {% endfor %}
+        </div>
+  
+        <h2 class="h1 my-5">Nos propriétaires selectes</h2>
+       
+        <div class="row">
+
+        {% for data in users %}
+            <div class="col">
+                <div class="card border-secondary mb-3">
+                    <div class="card-body">
+                        <h4 class="card-title">{{data.user.fullName}}</h4>
+
+                        <hr>
+
+                        <div class="card-text">
+                            <img src="{{data.user.picture}}" alt="avartar de {{data.user.fullName}}" class="float-left mr-3">
+                            <p>{{data.user.introduction}}</p>
+                            <a href="{{ path('user_show',{'slug': data.user.slug} )}}" class="btn btn-success float-right">En savoir plus</a>
+
+                        </div>
+
+                    </div>
+                
+                </div>
+            
+            </div>
+        {% endfor %}
+            
+        </div>
+
+</div>
+{% endblock %}
+
+ {% block javascripts %}{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Modification du formulaire d'inscription !{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <h1 class="my-5">Modifiez votre profil</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary">Enregistrer les Modifications</button>
+
+        {{ form_end(form) }}
+
+
+
+</div>
+ 
+{% endblock %}
