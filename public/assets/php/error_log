@@ -1,0 +1,4 @@
+[28-Sep-2018 14:08:20 America/New_York] PHP Notice:  Undefined variable: name in /home/lastpuyt/public_html/EnvyTheme.com/demo/abhy/assets/php/form-process.php on line 42
+[28-Sep-2018 14:08:20 America/New_York] PHP Notice:  Undefined variable: email in /home/lastpuyt/public_html/EnvyTheme.com/demo/abhy/assets/php/form-process.php on line 45
+[28-Sep-2018 14:08:20 America/New_York] PHP Notice:  Undefined variable: msg_subject in /home/lastpuyt/public_html/EnvyTheme.com/demo/abhy/assets/php/form-process.php on line 48
+[28-Sep-2018 14:08:20 America/New_York] PHP Notice:  Undefined variable: message in /home/lastpuyt/public_html/EnvyTheme.com/demo/abhy/assets/php/form-process.php on line 51
